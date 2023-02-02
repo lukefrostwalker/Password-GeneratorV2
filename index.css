@@ -33,7 +33,7 @@ body {
   font-weight: 800px;
   line-height: 40px;
   letter-spacing: -0.025em;
-  margin: 20px 0 0 0;
+  margin: 25px 0 0 0;
 }
 
 .text {
@@ -41,7 +41,7 @@ body {
   font-size: 20px;
   line-height: 28px;
   color: #d5d4d8;
-  margin: 10px 0 51px 0;
+  margin: 10px 0 40px 0;
 }
 
 button {

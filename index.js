@@ -2,7 +2,7 @@ const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 const lowercase = 'abcdefghijklmnopqrstuvwxyz'.split('');
 const numbers = '0123456789'.split('');
 const symbols = '!@#$%^&*()_+-=[]{}|;\':"<>,.?/'.split('');
-const ambiguous = '{}[]()/\'"`~,;:.<>'.split('');
+const ambiguous = '{}[]()/\'"`~,;:.<>|'.split('');
 const similar = 'iI1loO0'.split('');
 
 let characters = [];
@@ -36,9 +36,7 @@ function generatePasswords() {
     if (symbolsBox.checked && avoidBox.checked) {
       syms.push(...symbols);
       filtered = syms.filter((char) => !ambiguous.includes(char));
-      syms = [];
-      syms.push(...filtered);
-      characters.push(...syms);
+      characters.push(...filtered);
     } else if (symbolsBox.checked) {
       characters.push(...symbols);
     }
@@ -46,9 +44,7 @@ function generatePasswords() {
       filtered = characters.filter((char) => !similar.includes(char));
       characters = [];
       characters.push(...filtered);
-      console.log(characters);
     }
-    console.log(characters);
 
     if (characters.length === 0) {
       alert('Please select at least one character set');
