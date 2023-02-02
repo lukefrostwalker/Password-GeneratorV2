@@ -1,5 +1,9 @@
 <html>
-  <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
@@ -18,7 +22,7 @@
         Generate Passwords
       </button>
 
-      <label for="passwordLength">
+      <label for="passwordLength" id="passwordLLabel">
         Password length:
         <input
           id="passwordLength"
@@ -46,6 +50,16 @@
         <label for="symbols">
           <input type="checkbox" id="symbols" /> Symbols
         </label>
+        <div>
+          <label for="avoid">
+            <input type="checkbox" id="avoid" /> Exclude Ambiguous Characters
+          </label>
+        </div>
+        <div>
+          <label for="similar">
+            <input type="checkbox" id="similar" /> Exclude Similar Characters
+          </label>
+        </div>
       </div>
 
       <span class="breakline"></span>

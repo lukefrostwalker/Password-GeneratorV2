@@ -1,14 +1,20 @@
 const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 const lowercase = 'abcdefghijklmnopqrstuvwxyz'.split('');
 const numbers = '0123456789'.split('');
-const symbols = '!@#$%^&*()_+-=[]{}|;\':"<>,.?/\\'.split('');
+const symbols = '!@#$%^&*()_+-=[]{}|;\':"<>,.?/'.split('');
+const ambiguous = '{}[]()/\'"`~,;:.<>'.split('');
+const similar = 'iI1loO0'.split('');
+
 let characters = [];
+let syms = [];
 let hasGenerated = false;
 
 let uppercaseBox = document.getElementById('uppercase');
 let lowercaseBox = document.getElementById('lowercase');
 let numbersBox = document.getElementById('numbers');
 let symbolsBox = document.getElementById('symbols');
+let avoidBox = document.getElementById('avoid');
+let similarBox = document.getElementById('similar');
 let passwordLength = document.getElementById('passwordLength');
 
 let passwordOne = document.getElementById('passwordOne');
@@ -27,9 +33,22 @@ function generatePasswords() {
     if (numbersBox.checked) {
       characters.push(...numbers);
     }
-    if (symbolsBox.checked) {
+    if (symbolsBox.checked && avoidBox.checked) {
+      syms.push(...symbols);
+      filtered = syms.filter((char) => !ambiguous.includes(char));
+      syms = [];
+      syms.push(...filtered);
+      characters.push(...syms);
+    } else if (symbolsBox.checked) {
       characters.push(...symbols);
     }
+    if (similarBox.checked) {
+      filtered = characters.filter((char) => !similar.includes(char));
+      characters = [];
+      characters.push(...filtered);
+      console.log(characters);
+    }
+    console.log(characters);
 
     if (characters.length === 0) {
       alert('Please select at least one character set');
@@ -44,6 +63,7 @@ function generatePasswords() {
     }
     hasGenerated = true;
   } else {
+    syms = [];
     characters = [];
     passwordOne.value = '';
     passwordTwo.value = '';
