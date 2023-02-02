@@ -1,0 +1,80 @@
+<html>
+  <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">
+        Generate a <br />
+        <span class="green">random password</span>
+      </h1>
+      <p class="text">Never use an insecure password again.</p>
+
+      <button class="generate-btn" onclick="generatePasswords()">
+        Generate Passwords
+      </button>
+
+      <label for="passwordLength">
+        Password length:
+        <input
+          id="passwordLength"
+          class="input"
+          type="number"
+          min="6"
+          max="120"
+          value="6"
+        />
+      </label>
+
+      <div>
+        <label for="uppercase">
+          <input type="checkbox" id="uppercase" checked /> Uppercase
+        </label>
+
+        <label for="lowercase">
+          <input type="checkbox" id="lowercase" checked /> Lowercase
+        </label>
+
+        <label for="numbers">
+          <input type="checkbox" id="numbers" /> Numbers
+        </label>
+
+        <label for="symbols">
+          <input type="checkbox" id="symbols" /> Symbols
+        </label>
+      </div>
+
+      <span class="breakline"></span>
+
+      <div class="generatedContainer">
+        <div class="inputCopy">
+          <input id="passwordOne" class="input" type="text" />
+          <div class="tooltip">
+            <button id="copyBtn" onclick="copyOne()" onmouseout="outFuncOne()">
+              <span class="tooltiptext" id="myTooltipOne"
+                >Copy to clipboard</span
+              >
+              Copy text
+            </button>
+          </div>
+        </div>
+        <div class="inputCopy">
+          <input id="passwordTwo" class="input" type="text" />
+          <div class="tooltip">
+            <button id="copyBtn" onclick="copyTwo()" onmouseout="outFuncTwo()">
+              <span class="tooltiptext" id="myTooltipTwo"
+                >Copy to clipboard</span
+              >
+              Copy text
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

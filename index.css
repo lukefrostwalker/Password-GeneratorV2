@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Karla:wght@400;800&display=swap');
+
+body {
+  background-color: #e8f1eb;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.green {
+  color: #4adf86;
+}
+
+.container {
+  padding: 52px;
+  height: 550px;
+  background-color: #1f2937;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border: 7px solid #fff;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.title {
+  font-family: 'Karla', sans-serif;
+  font-size: 40px;
+  font-weight: 800px;
+  line-height: 40px;
+  letter-spacing: -0.025em;
+  margin: 20px 0 0 0;
+}
+
+.text {
+  font-family: 'Inter';
+  font-size: 20px;
+  line-height: 28px;
+  color: #d5d4d8;
+  margin: 10px 0 51px 0;
+}
+
+button {
+  background: #10b981;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  font-family: 'Inter';
+  font-weight: 500;
+  line-height: 24px;
+  color: inherit;
+  border: transparent;
+  padding: 9px 17px;
+  margin-bottom: 30px;
+}
+
+label {
+  margin-right: 15px;
+  font-family: 'Inter';
+}
+
+#passwordLength {
+  width: 70px;
+  height: 30px;
+  margin-bottom: 15px;
+}
+.breakline {
+  width: 446px;
+  border: 1px solid #2f3e53;
+  margin: 20px 0 30px 0;
+}
+
+.generatedContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.inputCopy {
+  display: flex;
+  flex-direction: column;
+}
+.input {
+  text-align: center;
+  padding-left: 10px;
+  color: #55f991;
+  width: 444px;
+  height: 39px;
+  left: 52px;
+  top: 396px;
+  background: #273549;
+  border: transparent;
+  font-family: 'Inter';
+}
+
+#copyBtn {
+  width: 100%;
+  margin: 10px 0 25px 0;
+  font-size: small;
+  padding: 5px 5px;
+  background: #074d3585;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
